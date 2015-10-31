@@ -1,0 +1,88 @@
+If (Text1.Text = "Admin") And (Text2.Text = "1ia26") Then
+i = MsgBox("Login Anda berhasil", vbOKOnly + vbInformation, "Admin")
+Form2.Show
+Unload Me
+
+Else:
+i = MsgBox("Maap Login anda blum berhasil", vbOKOnly + vbCritical, "Admin")
+End If
+
++++ Combo Box +++
+Private Sub cmbminum_Change()
+cmbminum.Text = "Es Teh Manis"
+cmbminum.Text = "Es Jeruk"
+cmbminum.Text = "Jus Alpukat"
+cmbminum.Text = "Aqua Botol"
+End Sub
+
+
+Private Sub cmbmakan_Change()
+cmbmakan.Text = "Nasi Goreng"
+cmbmakan.Text = "Soto Ayam"
+cmbmakan.Text = "Batagor"
+cmbmakan.Text = "Nasi Ayam Bakar"
+End Sub
+
++++ Command Button +++
+Private Sub Command1_Click()
+Dim Harga As Integer
+If cmbmakan.Text = "Nasi Goreng" Then
+Text1 = 10000
+Else
+If cmbmakan.Text = "Soto Ayam" Then
+Text1 = 7000
+Else
+If cmbmakan.Text = "Batagor" Then
+Text1 = 8000
+Else
+If cmbmakan.Text = "Nasi Ayam Bakar" Then
+Text1 = 13000
+Else
+Text1 = 0
+End If
+End If
+End If
+End If
+End Sub
+
+Private Sub Command2_Click()
+Dim Harga As Integer
+If cmbminum.Text = "Es Teh Manis" Then
+Text2 = 2000
+Else
+If cmbminum.Text = "Es Jeruk" Then
+Text2 = 3000
+Else
+If cmbminum.Text = "Jus Alpukat" Then
+Text2 = 4000
+Else
+If cmbminum.Text = "Aqua Botol" Then
+Text2 = 3000
+Else
+Text2 = 0
+End If
+End If
+End If
+End If
+End Sub
+
+Private Sub Command3_Click()
+End
+End Sub
+
+Private Sub Command4_Click()
+Text3.Text = Text1 + Text2 * 1
+End Sub
+
++++ Form +++
+Private Sub Form_Load()
+cmbmakan.AddItem ("Nasi Goreng")
+cmbmakan.AddItem ("Soto Ayam")
+cmbmakan.AddItem ("Batagor")
+cmbmakan.AddItem ("Nasi Ayam Bakar")
+
+cmbminum.AddItem ("Es Teh Manis")
+cmbminum.AddItem ("Es Jeruk")
+cmbminum.AddItem ("Jus Alpukat")
+cmbminum.AddItem ("Aqua Botol")
+End Sub
